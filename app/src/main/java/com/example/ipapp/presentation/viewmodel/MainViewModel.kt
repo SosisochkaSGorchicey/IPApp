@@ -22,8 +22,19 @@ class MainViewModel(
     private val _ipData = MutableStateFlow(IPData())
     val ipData = _ipData.asStateFlow()
 
-    private val _errorForDisplayRes = MutableStateFlow<Int>(R.string.empty)
+    private val _errorForDisplayRes = MutableStateFlow(R.string.empty)
     val errorForDisplayRes: StateFlow<Int> = _errorForDisplayRes
+
+    private val _ipIsCurrent = MutableStateFlow(false)
+    val ipIsCurrent = _ipIsCurrent.asStateFlow()
+
+    fun setIpIsCurrent() {
+        _ipIsCurrent.value = true
+    }
+
+    fun setIpIsNotCurrent() {
+        _ipIsCurrent.value = false
+    }
 
     fun getIpData(ip: String) {
         viewModelScope.launch {

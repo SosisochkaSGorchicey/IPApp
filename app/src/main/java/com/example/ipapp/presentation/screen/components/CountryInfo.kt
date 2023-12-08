@@ -9,6 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
 import coil.compose.AsyncImage
@@ -29,7 +30,9 @@ fun CountryInfo(mainViewModel: MainViewModel = koinViewModel()) {
             modifier = Modifier
                 .height(40.dp),
             model = ipData.flagUrl,
-            contentDescription = null
+            contentDescription = null,
+            placeholder = painterResource(id = R.drawable.baseline_image_24),
+            error = painterResource(id = R.drawable.baseline_image_24)
         )
 
         ipData.isoCode?.let {

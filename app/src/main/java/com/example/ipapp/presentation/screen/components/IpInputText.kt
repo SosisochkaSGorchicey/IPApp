@@ -13,22 +13,25 @@ import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+import androidx.compose.material3.Text
 import androidx.compose.material3.TextField
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.mutableStateOf
-import androidx.compose.runtime.remember
 import androidx.compose.runtime.saveable.rememberSaveable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.unit.dp
+import com.example.ipapp.R
 import com.example.ipapp.presentation.viewmodel.MainViewModel
 import org.koin.androidx.compose.koinViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun IpInputText(mainViewModel: MainViewModel = koinViewModel()) {
+
     val ipText = rememberSaveable {
         mutableStateOf("")
     }
@@ -55,7 +58,14 @@ fun IpInputText(mainViewModel: MainViewModel = koinViewModel()) {
                 unfocusedIndicatorColor = Color.Transparent,
                 focusedIndicatorColor = Color.Transparent
             ),
-            textStyle = MaterialTheme.typography.titleMedium
+            textStyle = MaterialTheme.typography.titleMedium,
+            label = {
+                Text(
+                    text = stringResource(id = R.string.label_text),
+                    style = MaterialTheme.typography.labelMedium,
+                    color = MaterialTheme.colorScheme.onBackground
+                )
+            }
         )
 
         Icon(
@@ -66,6 +76,9 @@ fun IpInputText(mainViewModel: MainViewModel = koinViewModel()) {
                 )
                 .padding(10.dp)
                 .clickable {
+                    if (ipText.value.trim().isEmpty()) mainViewModel.setIpIsCurrent()
+                    else mainViewModel.setIpIsNotCurrent()
+
                     mainViewModel.getIpData(ip = ipText.value.trim())
                 },
             imageVector = Icons.Filled.Search,

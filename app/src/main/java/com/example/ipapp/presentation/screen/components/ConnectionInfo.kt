@@ -11,10 +11,11 @@ import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.collectAsState
-import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.alpha
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.text.style.TextDecoration
 import androidx.compose.ui.unit.dp
 import com.example.ipapp.R
 import com.example.ipapp.presentation.viewmodel.MainViewModel
@@ -41,38 +42,45 @@ fun ConnectionInfo(mainViewModel: MainViewModel = koinViewModel()) {
                 .padding(10.dp),
             verticalArrangement = Arrangement.spacedBy(10.dp)
         ) {
+            Text(
+                modifier = Modifier.fillMaxWidth(),
+                text = stringResource(id = R.string.connection_info_header),
+                style = MaterialTheme.typography.titleMedium,
+                textAlign = TextAlign.Center
+            )
+
             ipData.connectionType?.let {
                 Text(
                     text = stringResource(id = R.string.connection_type_text, it),
-                    style = MaterialTheme.typography.labelMedium,
+                    style = MaterialTheme.typography.labelMedium
                 )
             }
 
             ipData.organization?.let {
                 Text(
                     text = stringResource(id = R.string.organization_text, it),
-                    style = MaterialTheme.typography.labelMedium,
+                    style = MaterialTheme.typography.labelMedium
                 )
             }
 
             ipData.ispName?.let {
                 Text(
                     text = stringResource(id = R.string.isp_name_text, it),
-                    style = MaterialTheme.typography.labelMedium,
+                    style = MaterialTheme.typography.labelMedium
                 )
             }
 
             ipData.asn?.let {
                 Text(
                     text = stringResource(id = R.string.asn_text, it),
-                    style = MaterialTheme.typography.labelMedium,
+                    style = MaterialTheme.typography.labelMedium
                 )
             }
 
             ipData.asnOrganization?.let {
                 Text(
                     text = stringResource(id = R.string.asn_organization_text, it),
-                    style = MaterialTheme.typography.labelMedium,
+                    style = MaterialTheme.typography.labelMedium
                 )
             }
         }

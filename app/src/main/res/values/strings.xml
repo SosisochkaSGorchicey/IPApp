@@ -27,4 +27,7 @@
     <string name="isp_name_text">Internet service provider: %1$s</string>
     <string name="asn_text">Autonomous System Number: %1$s</string>
     <string name="asn_organization_text">ASN organization: %1$s</string>
+    <string name="connection_info_header">Connection information</string>
+    <string name="label_text">Please enter ip address</string>
+    <string name="current_ip_text">Info about your current ip address</string>
 </resources>
