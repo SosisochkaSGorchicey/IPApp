@@ -1,3 +1,18 @@
 <resources>
     <string name="app_name">IPApp</string>
+
+    <string name="bad_connection">Bad connection</string>
+    <string name="error">Error</string>
+    <string name="null_data_error">data error</string>
+
+    <string name="http_400">Incorrect Request</string>
+    <string name="http_403">The server can not find the requested resource</string>
+    <string name="http_404">You do not have access rights to the content</string>
+    <string name="http_500">Internal Server Error</string>
+    <string name="http_502">Bad Gateway</string>
+    <string name="http_504">The server is acting as a gateway and cannot get a response in time for a request</string>
+
+    <string name="io_eof">End of file or end of stream has been reached unexpectedly during input</string>
+    <string name="io_socket">There is an error creating or accessing a Socket</string>
+    <string name="io_unknown">IP address of a host could not be determined</string>
 </resources>
