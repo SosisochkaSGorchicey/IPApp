@@ -19,7 +19,7 @@ object MyAppModule {
 
         single { GetIPDataUseCase(ipRepository = get()) }
 
-        viewModel { MainViewModel() }
+        viewModel { MainViewModel(getIPDataUseCase = get()) }
     }
 
     private fun provideRetrofitForMyApp(): Retrofit = Retrofit.Builder()

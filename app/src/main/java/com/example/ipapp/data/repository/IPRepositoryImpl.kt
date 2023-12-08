@@ -17,22 +17,22 @@ import java.io.IOException
 class IPRepositoryImpl(
     private val ipService: IPService
 ) : IPRepository {
-    override fun getIPData(): Flow<NetworkResult<IPData>> = flow {
+    override fun getIPData(ip: String): Flow<NetworkResult<IPData>> = flow {
         try {
-            val response = ipService.getIPData().toDomain()
+            val response = ipService.getIPData(ip = ip).toDomain()
             emit(NetworkResult.Success(response))
         } catch (e: Throwable) {
             when (e) {
                 is HttpException -> {
                     emit(
                         NetworkResult.HttpException(
-                            errorMessage = e.code().httpCodeToErrorMessage()
+                            errorMessageRes = e.code().httpCodeToErrorMessage()
                         )
                     )
                 }
 
                 is IOException -> {
-                    emit(NetworkResult.IOException(errorMessage = e.ioExceptionToNetworkResult()))
+                    emit(NetworkResult.IOException(errorMessageRes = e.ioExceptionToNetworkResult()))
                 }
             }
         }

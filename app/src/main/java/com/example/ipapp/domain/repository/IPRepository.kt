@@ -5,5 +5,5 @@ import com.example.ipapp.domain.model.IPData
 import kotlinx.coroutines.flow.Flow
 
 interface IPRepository {
-    fun getIPData(): Flow<NetworkResult<IPData>>
+    fun getIPData(ip: String): Flow<NetworkResult<IPData>>
 }

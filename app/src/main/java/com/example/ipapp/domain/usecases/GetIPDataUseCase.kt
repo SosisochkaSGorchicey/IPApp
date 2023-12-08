@@ -5,5 +5,5 @@ import com.example.ipapp.domain.repository.IPRepository
 class GetIPDataUseCase(
     private val ipRepository: IPRepository
 ) {
-    operator fun invoke() = ipRepository.getIPData()
+    operator fun invoke(ip: String) = ipRepository.getIPData(ip = ip)
 }
