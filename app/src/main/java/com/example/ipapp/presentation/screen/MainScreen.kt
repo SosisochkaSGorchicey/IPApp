@@ -1,6 +1,8 @@
 package com.example.ipapp.presentation.screen
 
+import android.util.Log
 import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -8,16 +10,24 @@ import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.collectAsState
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Brush
 import androidx.compose.ui.unit.dp
+import com.example.ipapp.presentation.screen.components.ConnectionInfo
+import com.example.ipapp.presentation.screen.components.CountryInfo
 import com.example.ipapp.presentation.screen.components.IpInputText
+import com.example.ipapp.presentation.screen.components.LatLonInfo
 import com.example.ipapp.presentation.viewmodel.MainViewModel
 import org.koin.androidx.compose.koinViewModel
 
 
 @Composable
 fun MainScreen(mainViewModel: MainViewModel = koinViewModel()) {
+
+    val ipData = mainViewModel.ipData.collectAsState().value
+    Log.v("alice", ipData.toString())
+
     Column(
         modifier = Modifier
             .fillMaxSize()
@@ -31,9 +41,15 @@ fun MainScreen(mainViewModel: MainViewModel = koinViewModel()) {
                 )
             )
             .padding(top = 10.dp, start = 10.dp, end = 10.dp)
-            .verticalScroll(rememberScrollState())
+            .verticalScroll(rememberScrollState()),
+        verticalArrangement = Arrangement.spacedBy(10.dp)
     ) {
         IpInputText()
+
+        CountryInfo()
+
+        LatLonInfo()
+
+        ConnectionInfo()
     }
 }
-

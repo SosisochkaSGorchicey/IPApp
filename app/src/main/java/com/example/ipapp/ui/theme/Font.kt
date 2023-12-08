@@ -8,8 +8,8 @@ import com.example.ipapp.R
 val mainFont = FontFamily(
     fonts = listOf(
         Font(resId = R.font.geist_bold, weight = FontWeight.Bold),
-        Font(resId = R.font.geist_bold, weight = FontWeight.Medium),
-        Font(resId = R.font.geist_bold, weight = FontWeight.Light),
-        Font(resId = R.font.geist_bold, weight = FontWeight.Thin)
+        Font(resId = R.font.geist_medium, weight = FontWeight.Medium),
+        Font(resId = R.font.geist_light, weight = FontWeight.Light),
+        Font(resId = R.font.geist_thin, weight = FontWeight.Thin)
     )
 )

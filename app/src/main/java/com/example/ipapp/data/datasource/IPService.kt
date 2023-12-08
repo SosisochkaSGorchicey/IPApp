@@ -5,7 +5,7 @@ import retrofit2.http.GET
 import retrofit2.http.Path
 
 interface IPService {
-    @GET("search/{ip}")
+    @GET("ipdata/{ip}")
     suspend fun getIPData(
         @Path("ip") ip: String
     ): IPDataModel

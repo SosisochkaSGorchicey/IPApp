@@ -7,4 +7,6 @@ object Dependencies {
     // Koin
     const val koinAndroid = "io.insert-koin:koin-android:3.4.0"
     const val koinCompose = "io.insert-koin:koin-androidx-compose:3.4.0"
+
+    const val coilCompose = "io.coil-kt:coil-compose:2.5.0"
 }

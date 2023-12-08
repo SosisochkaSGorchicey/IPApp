@@ -50,6 +50,8 @@ android {
 }
 
 dependencies {
+    implementation(Dependencies.coilCompose)
+
     implementation(Dependencies.koinAndroid)
     implementation(Dependencies.koinCompose)
 

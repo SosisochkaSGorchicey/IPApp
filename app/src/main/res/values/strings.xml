@@ -16,4 +16,15 @@
     <string name="io_eof">End of file or end of stream has been reached unexpectedly during input</string>
     <string name="io_socket">There is an error creating or accessing a Socket</string>
     <string name="io_unknown">IP address of a host could not be determined</string>
+
+    <string name="continent_text">Continent: %1$s</string>
+    <string name="country_text">Country: %1$s</string>
+    <string name="city_text">City: %1$s</string>
+    <string name="lat_text">Latitude\n%1$s</string>
+    <string name="lon_text">Longitude\n%1$s</string>
+    <string name="connection_type_text">Connection type: %1$s</string>
+    <string name="organization_text">Organization: %1$s</string>
+    <string name="isp_name_text">Internet service provider: %1$s</string>
+    <string name="asn_text">Autonomous System Number: %1$s</string>
+    <string name="asn_organization_text">ASN organization: %1$s</string>
 </resources>

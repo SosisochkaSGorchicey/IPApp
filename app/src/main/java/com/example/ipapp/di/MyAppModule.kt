@@ -24,9 +24,8 @@ object MyAppModule {
 
     private fun provideRetrofitForMyApp(): Retrofit = Retrofit.Builder()
         .addConverterFactory(GsonConverterFactory.create())
-        .baseUrl("https://ipdb.ipcalc.co/ipdata/")
+        .baseUrl("https://ipdb.ipcalc.co/")
         .build()
-
 
     private fun provideRecipesServiceForMyApp(retrofit: Retrofit): IPService =
         retrofit.create(IPService::class.java)
