@@ -66,17 +66,16 @@ fun MainScreen(mainViewModel: MainViewModel = koinViewModel()) {
                 ErrorText(text = ipData.message)
             }
 
-            ipData.country != null -> {
-                CountryInfo()
-                LatLonInfo()
-            }
-
             ipData.connectionType != null -> {
                 CountryInfo()
                 LatLonInfo()
                 ConnectionInfo()
             }
-        }
 
+            ipData.country != null -> {
+                CountryInfo()
+                LatLonInfo()
+            }
+        }
     }
 }

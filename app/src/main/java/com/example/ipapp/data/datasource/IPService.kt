@@ -10,3 +10,4 @@ interface IPService {
         @Path("ip") ip: String
     ): IPDataModel
 }
+
